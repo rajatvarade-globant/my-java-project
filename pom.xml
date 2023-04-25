@@ -24,6 +24,8 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <argLine>-Duser.language=en</argLine>
+                    <source>6</source>
+                     <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
