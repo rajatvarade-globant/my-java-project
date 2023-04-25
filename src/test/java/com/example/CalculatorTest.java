@@ -34,4 +34,8 @@ public class CalculatorTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void
+    public void testDivisionByZero() {
+        Calculator calculator = new Calculator();
+        calculator.divide(10, 0);
+    }
+}
