@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Chart.name }}
   labels:
     app: my-java-app
 spec:
@@ -15,7 +15,7 @@ spec:
         app: my-java-app
     spec:
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Chart.name }}
           image: "{{ .Values.image.tag }}"
           ports:
             - name: http
