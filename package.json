@@ -1,0 +1,17 @@
+{
+    "name": "my-node-app",
+    "version": "1.0.0",
+    "description": "A simple Node.js server",
+    "scripts": {
+      "start": "node src/server.js",
+      "test": "mocha --require esm --timeout 10000 --recursive"
+    },
+    "dependencies": {
+      "express": "^4.17.1"
+    },
+    "devDependencies": {
+      "mocha": "^9.1.1",
+      "supertest": "^6.1.3"
+    }
+  }
+  
