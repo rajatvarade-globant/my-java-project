@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: 172.17.0.1:5000/myimage
+  repository: rajatvarade/test
   tag: latest
 
 containerPort: 80
