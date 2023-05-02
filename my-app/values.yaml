@@ -1,7 +1,11 @@
 replicaCount: 1
+
 image:
   repository: nginx
   tag: stable
-service:
-  port: 8080
 
+containerPort: 80
+
+service:
+  type: ClusterIP
+  port: 80
