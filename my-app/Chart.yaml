@@ -1,4 +1,4 @@
 apiVersion: v2
-name: my-app
-description: A Helm chart for my app
+name: mychart
+description: A Helm chart for a simple deployment and service
 version: 0.1.0
