@@ -1,13 +1,14 @@
-FROM node:14-alpine
+# Use a Java runtime as a parent image
+FROM openjdk:11-jre-slim
 
+# Set the working directory to /app
 WORKDIR /app
 
-COPY package*.json ./
+# Copy the WAR file from the build context to the container
+COPY target/myapp.war .
 
-RUN npm install
+# Expose port 8080 for the web application
+EXPOSE 8080
 
-COPY . .
-
-EXPOSE 3000
-
-CMD [ "npm", "start" ]
+# Set the command to run when the container starts
+CMD ["java", "-jar", "myapp.war"]
