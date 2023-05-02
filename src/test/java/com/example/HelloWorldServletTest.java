@@ -26,4 +26,27 @@ public class HelloWorldServletTest {
 
   @Test
   public void testDoGet() throws ServletException, IOException {
-    when(response.getWriter()).thenReturn(new TestResponse
+    when(response.getWriter()).thenReturn(new TestResponse());
+
+    servlet.doGet(request, response);
+
+    assertEquals("Hello, world!", response.getWriter().toString());
+  }
+
+  private class TestResponse implements HttpServletResponse {
+    private StringWriter writer = new StringWriter();
+
+    @Override
+    public PrintWriter getWriter() throws IOException {
+      return new PrintWriter(writer);
+    }
+
+    @Override
+    public String toString() {
+      return writer.toString();
+    }
+
+    // Other methods of the HttpServletResponse interface
+    // can be left unimplemented or implemented as no-ops.
+  }
+}
