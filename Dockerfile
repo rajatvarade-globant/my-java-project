@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/myapp.war .
 
 # Expose port 8080 for the web application
-EXPOSE 8080
+EXPOSE 3000
 
 # Set the command to run when the container starts
 CMD ["java", "-jar", "myapp.war"]
