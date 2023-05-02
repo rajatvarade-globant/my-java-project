@@ -1,11 +1,11 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: stable
+  repository: 172.17.0.1:5000/myimage
+  tag: latest
 
 containerPort: 80
 
 service:
-  type: LoadBalancer
+  type: ClusterIP
   port: 6000
