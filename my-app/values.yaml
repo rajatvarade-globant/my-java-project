@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: rajatvarade/test
+  tag: latest
+
+containerPort: 80
+
+service:
+  type: ClusterIP
+  port: 6000
