@@ -1,14 +1,20 @@
-# Use a Java runtime as a parent image
-FROM openjdk:11-jre-slim
+# Use the official Node.js image as the base image
+FROM node:16-alpine
 
-# Set the working directory to /app
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the WAR file from the build context to the container
-COPY target/myapp.war .
+# Copy the package.json and package-lock.json files into the container
+COPY package*.json ./
 
-# Expose port 8080 for the web application
+# Install the dependencies
+RUN npm install
+
+# Copy the rest of the application files into the container
+COPY . .
+
+# Expose port 3000 to the outside world
 EXPOSE 3000
 
-# Set the command to run when the container starts
-CMD ["java", "-jar", "myapp.war"]
+# Start the application
+CMD ["npm", "start"]
