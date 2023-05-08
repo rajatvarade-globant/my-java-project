@@ -15,7 +15,7 @@ RUN npm install
 
 # Copy the rest of the application files into the container
 RUN ls
-COPY my-java-project/* .
+COPY src test .
 
 # Expose port 3000 to the outside world
 EXPOSE 3000
