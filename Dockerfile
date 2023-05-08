@@ -21,5 +21,7 @@ COPY my-java-project/* .
 # Expose port 3000 to the outside world
 EXPOSE 3000
 
+USER nonroot
+
 # Start the application
 CMD ["npm", "start"]
