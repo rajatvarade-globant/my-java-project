@@ -4,8 +4,6 @@ FROM node:16-alpine
 RUN addgroup -S nonroot \
     && adduser -S nonroot -G nonroot
 
-USER nonroot
-
 # Set the working directory inside the container
 WORKDIR /app
 
