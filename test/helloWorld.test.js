@@ -1,4 +1,4 @@
-const helloWorld = require("../helloworld");
+const helloWorld = require("../src/helloworld");
 
 describe("helloWorld", () => {
   it("should return 'Hello, World!'", () => {
