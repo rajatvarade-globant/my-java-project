@@ -8,4 +8,4 @@ containerPort: 3000
 
 service:
   type: NodePort
-  port: 30000
+  port: 3000
