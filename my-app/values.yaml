@@ -7,5 +7,5 @@ image:
 containerPort: 3000
 
 service:
-  type: ClusterIP
-  port: 3000
+  type: NodePort
+  port: 30000
