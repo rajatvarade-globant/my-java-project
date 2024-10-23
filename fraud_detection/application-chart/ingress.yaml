@@ -15,4 +15,4 @@ spec:
               service:
                 name: live
                 port:
-                  number: 80
+                  number: 8080
