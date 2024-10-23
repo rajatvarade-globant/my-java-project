@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: live
+  namespace: default  # Change to your desired namespace
+spec:
+  type: ExternalName
+  externalName: external.example.com  # Replace this with the external DNS name
