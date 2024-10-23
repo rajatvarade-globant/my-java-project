@@ -5,4 +5,8 @@ metadata:
   namespace: default  # Change to your desired namespace
 spec:
   type: ExternalName
-  externalName: external.example.com  # Replace this with the external DNS name
+  externalName: nginx.tools.svc.cluster.local
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
