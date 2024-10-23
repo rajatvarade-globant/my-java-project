@@ -33,7 +33,7 @@ pipeline {
                     helm upgrade --install ${params.RELEASE_NAME} \
                                  ${params.CHART_NAME} \
                                  --namespace ${params.NAMESPACE} \
-                                 -set tag=${params.TAG} \
+                                 --set tag=${params.TAG} \
                                  --wait
                     """
                 }
