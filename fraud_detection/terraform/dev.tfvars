@@ -1,0 +1,12 @@
+project_id                       = "rajatv"
+region                           = "us-central1"
+cluster_name                     = "detection-workloads"
+backend_bucket                   = "biiling_test"
+primary_node_pool_machine_type   = "e2-medium"
+secondary_node_pool_machine_type = "e2-medium"
+bastion_host_machine_type        = "e2-medium"
+oauth_scopes                     = ["https://www.googleapis.com/auth/cloud-platform"]
+primary_node_pool_name           = "primary"
+secondary_node_pool_name         = "secondary"
+primary_node_pool_count          = 1
+secondary_node_pool_count        = 1
