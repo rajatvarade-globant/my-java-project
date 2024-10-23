@@ -5,7 +5,7 @@ FROM nginx:latest
 RUN rm /usr/share/nginx/html/*
 
 # Copy your custom index.html to the appropriate directory
-COPY ../application/index.html /usr/share/nginx/html/index.html
+COPY ./application/index.html /usr/share/nginx/html/index.html
 
 # Expose port 80 to access the Nginx server
 EXPOSE 80

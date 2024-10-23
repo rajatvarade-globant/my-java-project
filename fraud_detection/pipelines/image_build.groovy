@@ -8,6 +8,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = "nginx"  // Replace with your Docker image name
         DOCKER_REGISTRY = "us-central1-docker.pkg.dev/rajatv/fraud-detection"    // Optional: If you are pushing to a registry (e.g., DockerHub or private registry)
+        TF_WORKING_DIR = './fraud_detection/docker'
     }
 
     stages {
@@ -21,11 +22,14 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Building the Docker image from the Dockerfile
+
+                    dir(WORKING_DIR) {
+
+                        // Building the Docker image from the Dockerfile
                     sh '''
-                    cd ./fraud_detection/docker
                     docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
                     '''
+                    }
                 }
             }
         }
