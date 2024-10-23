@@ -32,7 +32,7 @@ pipeline {
                 script {
                     // Run Terraform Plan
                     dir(TF_WORKING_DIR) {
-                        sh 'terraform plan'
+                        sh 'terraform plan -var-file=dev.tfvars'
                     }
                 }
             }
@@ -46,7 +46,7 @@ pipeline {
                 script {
                     // Run Terraform Apply
                     dir(TF_WORKING_DIR) {
-                        sh 'terraform apply -auto-approve'
+                        sh 'terraform apply -var-file=dev.tfvars -auto-approve'
                     }
                 }
             }
