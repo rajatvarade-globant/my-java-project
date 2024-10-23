@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "{{ .Release.Name }}_{{ .Values.image.tag }}"
+  name: "{{ .Release.Name }}-{{ .Values.image.tag }}"
   labels:
-    app: "{{ .Release.Name }}_{{ .Values.image.tag }}"
+    app: "{{ .Release.Name }}-{{ .Values.image.tag }}"
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: "{{ .Release.Name }}_{{ .Values.image.tag }}"
+      app: "{{ .Release.Name }}-{{ .Values.image.tag }}"
   template:
     metadata:
       labels:
-        app: "{{ .Release.Name }}_{{ .Values.image.tag }}"
+        app: "{{ .Release.Name }}-{{ .Values.image.tag }}"
     spec:
       containers:
         - name: nginx

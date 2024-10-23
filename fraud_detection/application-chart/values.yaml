@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: us-central1-docker.pkg.dev/rajatv/fraud-detection/nginx
   tag: latest
   pullPolicy: IfNotPresent
 

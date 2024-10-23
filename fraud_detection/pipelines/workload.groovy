@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     parameters {
+        string(name: 'TAG', , defaultValue: '1.0.0', description: 'please enter the tag in following format 0_0_1')
         string(name: 'RELEASE_NAME', defaultValue: 'my-nginx-chart', description: 'Helm release name')
         string(name: 'CHART_NAME', defaultValue: './fraud_detection/application-chart', description: 'Path or name of Helm chart')
         string(name: 'NAMESPACE', defaultValue: 'default', description: 'Kubernetes namespace')
-        string(name: 'VALUES_FILE', defaultValue: './fraud_detection/application-chart/values.yaml', description: 'Path to custom values file')
     }
 
     stages {
@@ -33,7 +33,7 @@ pipeline {
                     helm upgrade --install ${params.RELEASE_NAME} \
                                  ${params.CHART_NAME} \
                                  --namespace ${params.NAMESPACE} \
-                                 -f ${params.VALUES_FILE} \
+                                 -set tag=${params.TAG} \
                                  --wait
                     """
                 }

@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: "{{ .Release.Name }}_{{ .Values.image.tag }}"
+  name: "{{ .Release.Name }}-{{ .Values.image.tag }}"
   labels:
-    app: "{{ .Release.Name }}_{{ .Values.image.tag }}"
+    app: "{{ .Release.Name }}-{{ .Values.image.tag }}"
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -11,4 +11,4 @@ spec:
       targetPort: 80
       protocol: TCP
   selector:
-    app: "{{ .Release.Name }}_{{ .Values.image.tag }}"
+    app: "{{ .Release.Name }}-{{ .Values.image.tag }}"
