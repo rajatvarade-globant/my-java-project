@@ -25,7 +25,7 @@ pipeline {
                     sh '''
                     cd ./fraud_detection/docker
                     docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
-                    ''''
+                    '''
                 }
             }
         }
