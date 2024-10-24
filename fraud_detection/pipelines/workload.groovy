@@ -49,6 +49,18 @@ pipeline {
                 }
             }
         }
+
+        stage('Patch the green deployment') {
+            steps {
+                script {
+                      sh """
+                      kubectl patch service old-app -p '{"spec":{"selector":{"app": "${params.TAG}"}}}'
+                    
+
+                    """
+                }
+            }
+        }
     }
 
     post {
