@@ -80,7 +80,7 @@ pipeline {
             steps {
                 script {
                       sh """
-                      kubectl patch service blue -p '{"spec":{"selector":{"app": "${params.TAG}"}}}'
+                      kubectl patch service live -p '{"spec":{"selector":{"app": "${params.TAG}"}}}'
                       sleep 5
 
                     """
@@ -92,7 +92,7 @@ pipeline {
             steps {
                 script {
                       sh """
-                     kubectl exec nginx-interactive -- curl --silent --show-error --fail blue
+                     kubectl exec nginx-interactive -- curl --silent --show-error --fail live
 
                     """
                 }
