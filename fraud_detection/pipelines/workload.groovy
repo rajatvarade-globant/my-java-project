@@ -51,21 +51,6 @@ pipeline {
             }
         }
 
-          stage('Run the test container') {
-            steps {
-                script {
-
-                      sh """
-               
-                    kubectl apply -f https://k8s.io/examples/application/shell-demo.yaml"
-                    sleep 5
-                    kubectl exec shell-demo -- apt-get update
-                    kubectl exec shell-demo -- apt-get install curl
-
-                    """
-                }
-            }
-        }
 
         stage('Patch the green deployment') {
             steps {
