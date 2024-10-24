@@ -99,6 +99,19 @@ pipeline {
             }
         }
 
+            stage('Patch the green deployment back') {
+            steps {
+                script {
+                      sh """
+                      kubectl patch service green -p '{"spec":{"selector":{"app": "green"}}}'
+                      sleep 5
+                    
+
+                    """
+                }
+            }
+        }
+
         stage(' Remove the old deployment') {
              when {
          expression { params.OLD_RELEASE_NAME != 'NEW_DEPLOYMENT' }
