@@ -54,7 +54,7 @@ pipeline {
             steps {
                 script {
                       sh """
-                      kubectl patch service old-app -p '{"spec":{"selector":{"app": "${params.TAG}"}}}'
+                      kubectl patch service green -p '{"spec":{"selector":{"app": "${params.TAG}"}}}'
                     
 
                     """
