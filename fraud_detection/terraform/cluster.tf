@@ -16,15 +16,15 @@ resource "google_container_cluster" "detection_workloads" {
 
   master_authorized_networks_config {
      cidr_blocks {
-       cidr_block = google_compute_subnetwork.vpc_subnet.ip_cidr_range
-       display_name = "internal"
+       cidr_block = "0.0.0.0/0"
+       display_name = "public"
      }
    }
 
   private_cluster_config {
-    enable_private_nodes    = true # Ensure nodes do not have public IP addresses
-    enable_private_endpoint = true # Keep control plane API accessible via public endpoint
-    master_ipv4_cidr_block  = "172.16.0.32/28"
+    enable_private_endpoint = false
+    enable_private_nodes   = true 
+    master_ipv4_cidr_block = "10.13.0.0/28"
   }
 
   # Define networking
