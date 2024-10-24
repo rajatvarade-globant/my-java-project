@@ -8,11 +8,11 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: "{{ .Release.Name }}-{{ .Values.image.tag }}"
+      app: "{{ .Values.image.tag }}"
   template:
     metadata:
       labels:
-        app: "{{ .Release.Name }}-{{ .Values.image.tag }}"
+        app: "{{ .Values.image.tag }}"
     spec:
       containers:
         - name: nginx
