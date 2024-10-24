@@ -51,6 +51,22 @@ pipeline {
             }
         }
 
+          stage('Run the test container') {
+            steps {
+                script {
+
+                      sh """
+               
+                    kubectl apply -f https://k8s.io/examples/application/shell-demo.yaml"
+                    sleep 5
+                    kubectl exec shell-demo -- apt-get update
+                    kubectl exec shell-demo -- apt-get install curl
+
+                    """
+                }
+            }
+        }
+
         stage('Patch the green deployment') {
             steps {
                 script {
@@ -68,7 +84,7 @@ pipeline {
             steps {
                 script {
                       sh """
-                      curl --silent --show-error --fail 10.7.249.31:80
+                       kubectl exec nginx-interactive -- curl --silent --show-error --fail green
 
                     """
                 }
@@ -91,7 +107,7 @@ pipeline {
             steps {
                 script {
                       sh """
-                      curl --silent --show-error --fail 10.7.247.102:80
+                     kubectl exec nginx-interactive -- curl --silent --show-error --fail blue
 
                     """
                 }
