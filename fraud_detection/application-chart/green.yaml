@@ -6,7 +6,7 @@ metadata:
     app: "green"
 spec:
   type: ClusterIP
-  clusterIP: 10.7.249.31
+  clusterIP: 10.4.1.10
   ports:
     - port: 80
       targetPort: 80
