@@ -6,6 +6,7 @@ metadata:
     app: "live"
 spec:
   type: ClusterIP
+  clusterIP: 10.7.247.102
   ports:
     - port: 80
       targetPort: 80

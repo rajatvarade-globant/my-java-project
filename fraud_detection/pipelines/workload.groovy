@@ -56,6 +56,7 @@ pipeline {
                 script {
                       sh """
                       kubectl patch service green -p '{"spec":{"selector":{"app": "${params.TAG}"}}}'
+                      sleep 5
                     
 
                     """
