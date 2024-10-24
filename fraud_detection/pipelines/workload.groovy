@@ -68,7 +68,7 @@ pipeline {
             steps {
                 script {
                       sh """
-                      curl --silent --show-error --fail 10.4.1.10:80
+                      curl --silent --show-error --fail 10.7.249.31:80
 
                     """
                 }
